@@ -105,6 +105,7 @@
 		flex-direction: column;
 		width: max-content;
 		height: max-content;
+		gap: 10px;
 		/* align-items: center; */
 		/* justify-content: center; */
 		background-color: #ffffff;
