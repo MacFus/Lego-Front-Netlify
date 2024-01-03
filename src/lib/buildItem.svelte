@@ -122,9 +122,9 @@
 		display: flex;
 		flex-direction: column;
 		height: 15rem;
-		width: 14rem;
+		width: 13rem;
 		justify-content: space-between;
-		margin: 20px 5px;
+		margin: 20px 20px;
 		border: solid 2px #ddd;
 		background-color: #ffffff;
 	}
@@ -184,7 +184,7 @@
 	.missing-container {
 		color: #8ab933;
 		padding: 5px;
-		font-size: 16px;
+		font-size: 15px;
 		display: flex;
 		justify-content: center;
 	}
