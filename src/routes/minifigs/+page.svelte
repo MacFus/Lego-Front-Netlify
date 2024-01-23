@@ -32,7 +32,6 @@
 
 		const { offset, pageSize, ...params } = pathVariables;
 		let response = await fetchMinifigsWithCriteria(params, $pageNumber, pageSize);
-		console.log(response)
 		loadedMinifigs.set(response.response);
 		isLoaded.set(true);
 		if (response.pages > $pageNumber) {
@@ -47,7 +46,6 @@
 		}
 	}
 	async function displaySet(event) {
-		console.log('event:', event.detail)
 		const pathVariables = event.detail.figNum;
 		goto(`/minifigs/${pathVariables}`);
 	}

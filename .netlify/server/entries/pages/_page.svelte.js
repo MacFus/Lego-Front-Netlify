@@ -15,7 +15,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         myStoredValue = localStorage.getItem("isLoggedIn");
       }
       if (myStoredValue != void 0) {
-        console.log("zalogowany");
         isLoggedIn.set(true);
         message = `You are logged in. Congrats!`;
         fetchUserDetails().then((response) => {
@@ -23,7 +22,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         });
       } else {
         message = `You are NOT logged in!`;
-        console.log("niezalogowany");
       }
     }
   }

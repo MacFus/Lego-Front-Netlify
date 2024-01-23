@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
     onMount(async () => {
         clearCookies();
-		goto("/");
+		// goto("/");
     })
 
 </script>
@@ -12,14 +12,14 @@
 <div class="login-message">
 	<h2>Access Restricted</h2>
 	<p>
-		Nie jesteś zalogowany. Aby otrzymać dostęp do tej funkcjonalności proszę zaloguj się do serwisu.
+		Nie jesteś zalogowany. Aby otrzymać dostęp do tej funkcjonalności zaloguj się do serwisu.
 	</p>
 	<h2>Dostępne Funkcjonalności:</h2>
 	<ul>
 		<li>Wyszukiwanie zestawów</li>
 		<li>Przeglądanie figurek</li>
-		<li>Dodawanie zestawów do swojego konta</li>
-		<li>Sprawdzanie, ile procent zestawu możesz złożyć</li>
+		<li>Możliwość tworzenia własnej kolekcji LEGO</li>
+		<li>Analizowanie zestawów pod kątem procentu posiadanych klocków</li>
 	</ul>
 </div>
 

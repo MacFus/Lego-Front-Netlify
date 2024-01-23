@@ -5,10 +5,10 @@
 	import { writable } from 'svelte/store';
     import {
 		processParts,
-		combinePartsFromSetsNoSpare,
-		combinePartsFromSets,
-		combinePartsFromSetsNoSpareWithColors,
-		combinePartsFromSetsWithColors,
+		combinePartsNoSpare,
+		combineParts,
+		combinePartsNoSpareWithColors,
+		combinePartsWithColors,
 		matchParts,
 		mapToArray,
         processSubstituteParts
@@ -48,7 +48,6 @@
 		load()
 			.then((data) => {
 				if (data) {
-					console.log('W build do set: ', setNum);
 					calcMatch(data);
                     dataLoaded.set(true);
 				}
@@ -70,12 +69,12 @@
 		let combinedParts, combinedMyParts;
 		if (ignoreColors) {
 			owned = 0;
-			combinedParts = combinePartsFromSetsNoSpare(parts);
-			combinedMyParts = combinePartsFromSets(myParts);
+			combinedParts = combinePartsNoSpare(parts);
+			combinedMyParts = combineParts(myParts);
 		} else {
 			owned = 0;
-			combinedParts = combinePartsFromSetsNoSpareWithColors(parts);
-			combinedMyParts = combinePartsFromSetsWithColors(myParts);
+			combinedParts = combinePartsNoSpareWithColors(parts);
+			combinedMyParts = combinePartsWithColors(myParts);
 		}
 
 		if (allowSubstitute) {

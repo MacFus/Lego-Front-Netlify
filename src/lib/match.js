@@ -46,7 +46,7 @@ export function matchParts(setParts, myParts, subs, allowSubstitute) {
     return setParts;
 }
 
-export function combinePartsFromSets(sets) {
+export function combineParts(sets) {
     const mySetToPartsMap = sets.setPartMap;
     let result = [];
     Object.keys(mySetToPartsMap).forEach((key) => {
@@ -64,7 +64,7 @@ export function combinePartsFromSets(sets) {
     return map;
 }
 
-export function combinePartsFromSetsWithColors(sets) {
+export function combinePartsWithColors(sets) {
     const result = [];
     const mySetToPartsMap = sets.setPartMap;
     Object.keys(mySetToPartsMap).forEach((key) => {
@@ -107,7 +107,7 @@ export function mapWithColor(partsArray) {
     return map;
 }
 
-export function combinePartsFromSetsNoSpare(sets) {
+export function combinePartsNoSpare(sets) {
     const result = [];
     const mySetToPartsMap = sets.setPartMap;
     Object.keys(mySetToPartsMap).forEach((key) => {
@@ -128,7 +128,7 @@ export function combinePartsFromSetsNoSpare(sets) {
     return map;
 }
 
-export function combinePartsFromSetsNoSpareWithColors(sets) {
+export function combinePartsNoSpareWithColors(sets) {
     const result = [];
     const mySetToPartsMap = sets.setPartMap;
     Object.keys(mySetToPartsMap).forEach((key) => {

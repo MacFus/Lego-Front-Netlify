@@ -1,10 +1,9 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-
 	export let set = [];
 	export let quantity;
-	let setNum = set.setNum;
 	const dispatch = createEventDispatcher();
+	let setNum = set.setNum;
 
 	function displaySet() {
 		dispatch('displaySet', { setNum });
@@ -20,8 +19,10 @@
 		<div class="second-container">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			{#if quantity}
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="name-container" on:dblclick={displaySet}>{quantity} x {set.name}</div>
 			{:else}
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="name-container" on:dblclick={displaySet}>{set.name}</div>
 			{/if}
 

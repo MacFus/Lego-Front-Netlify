@@ -32,7 +32,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         minifig = data.minifig;
         sets = data.sets;
         parts = data.parts;
-        console.log("data", data);
         processed = processMinifigParts();
       } else {
         console.log(

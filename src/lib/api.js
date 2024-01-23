@@ -176,8 +176,6 @@ export async function addSet(setNum) {
             data.forEach(response =>{
                 string += 'Pomyślnie dodano zestaw: ' +  response.setNum + '\n';
             })
-            console.log(string)
-            // alert(string);
         } else {
             console.error('HTTP Error:', response.status);
         }
@@ -205,8 +203,6 @@ export async function removeSets(selectedSets, deleteAll) {
             data.forEach(response =>{
                 string += response + '\n';
             })
-            console.log(string)
-            // alert(string);
         } else {
             console.error('HTTP Error:', response.status);
         }

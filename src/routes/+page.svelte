@@ -14,13 +14,11 @@
         }
 		// myStoredValue = localStorageStore('isLoggedIn', 'true');
 		if(myStoredValue != undefined){
-			console.log('zalogowany')
 			isLoggedIn.set(true)
 			message = `You are logged in. Congrats!`;
 			fetchUserDetails().then(response => {console.log(response)});
 		}else{
 			message = `You are NOT logged in!`;
-			console.log('niezalogowany')
 		}
 	}
 

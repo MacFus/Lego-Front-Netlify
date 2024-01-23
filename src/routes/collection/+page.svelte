@@ -16,8 +16,6 @@
 	$: {
 		if (typeof window !== 'undefined') {
 			myStoredValue = localStorage.getItem('isLoggedIn');
-			console.log(myStoredValue);
-			console.log($isLoaded);
 		}
 	}
 
@@ -26,7 +24,6 @@
 			const userId = getCookie('UserId');
 			const mySets = await fetchUserSetParts(userId);
 			data.set(mySets);
-			console.log('data', $data);
 		} catch (error) {
 			console.error('Error fetching data:', error);
 		}
@@ -34,7 +31,6 @@
 
 	async function displaySet(event) {
 		const pathVariables = event.detail.setNum;
-		console.log('displaySet', pathVariables);
 		goto(`/sets/${pathVariables}`);
 	}
 
@@ -45,7 +41,6 @@
 		} else {
 			selectedSets = selectedSets.filter((num) => num !== setNum); // Remove if already present
 		}
-		console.log(selectedSets);
 	}
 
 	async function addSetToUser() {

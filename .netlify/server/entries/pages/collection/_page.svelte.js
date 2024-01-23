@@ -20,8 +20,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       if (typeof window !== "undefined") {
         myStoredValue = localStorage.getItem("isLoggedIn");
-        console.log(myStoredValue);
-        console.log($isLoaded);
       }
     }
   }

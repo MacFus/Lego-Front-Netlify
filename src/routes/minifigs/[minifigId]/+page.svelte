@@ -36,14 +36,12 @@
 			myStoredValue = localStorage.getItem('isLoggedIn');
 		}
 		if (myStoredValue != undefined) {
-			// new Promise(resolve => setTimeout(resolve, 1000));
 			isLoggedIn.set(true);
 			minifig = data.minifig;
 			sets = data.sets;
 			parts = data.parts;
-			console.log('data', data);
 			processed = processMinifigParts();
-			// calcMatch(data, ignoreColors, allowSubstitute, match, owned, processed, tableItems);
+			calcMatch(data, ignoreColors, allowSubstitute, match, owned, processed, tableItems);
 		} else {
 			console.log('niezalogowany');
 		}

@@ -67,7 +67,6 @@ const BuildItem = create_ssr_component(($$result, $$props, $$bindings, slots) =>
     if (setNum) {
       load().then((data) => {
         if (data) {
-          console.log("W build do set: ", setNum);
           calcMatch(data);
           dataLoaded.set(true);
         }

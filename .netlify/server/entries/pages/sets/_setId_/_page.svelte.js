@@ -89,7 +89,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       }
       if (myStoredValue != void 0) {
         isLoggedIn.set(true);
-        console.log(data);
         calcMatch();
       } else {
         console.log("niezalogowany");

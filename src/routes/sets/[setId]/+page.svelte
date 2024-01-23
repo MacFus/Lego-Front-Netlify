@@ -4,10 +4,10 @@
 	import { addSet } from '$lib/api.js';
 	import {
 		processParts,
-		combinePartsFromSetsNoSpare,
-		combinePartsFromSets,
-		combinePartsFromSetsNoSpareWithColors,
-		combinePartsFromSetsWithColors,
+		combinePartsNoSpare,
+		combineParts,
+		combinePartsNoSpareWithColors,
+		combinePartsWithColors,
 		matchParts,
 		mapToArray,
 		processSubstituteParts
@@ -36,12 +36,8 @@
 			myStoredValue = localStorage.getItem('isLoggedIn');
 		}
 		if (myStoredValue != undefined) {
-			// new Promise(resolve => setTimeout(resolve, 1000));
 			isLoggedIn.set(true);
-			console.log(data);
 			calcMatch(data, ignoreColors, allowSubstitute, match, owned, processed, tableItems);
-		} else {
-			console.log('niezalogowany');
 		}
 	}
 
@@ -57,21 +53,19 @@
 			let combinedParts, combinedMyParts;
 			if (ignoreColors) {
 				owned = 0;
-				combinedParts = combinePartsFromSetsNoSpare(parts);
-				combinedMyParts = combinePartsFromSets(myParts);
+				combinedParts = combinePartsNoSpare(parts);
+				combinedMyParts = combineParts(myParts);
 			} else {
 				owned = 0;
-				combinedParts = combinePartsFromSetsNoSpareWithColors(parts);
-				combinedMyParts = combinePartsFromSetsWithColors(myParts);
+				combinedParts = combinePartsNoSpareWithColors(parts);
+				combinedMyParts = combinePartsWithColors(myParts);
 			}
-
 			if (allowSubstitute) {
 				const subs = processSubstituteParts(combinedParts, data.parts.substitutes, ignoreColors);
 				match = matchParts(combinedParts, combinedMyParts, subs, allowSubstitute);
 			} else {
 				match = matchParts(combinedParts, combinedMyParts, null, null);
 			}
-
 			tableItems = mapToArray(match);
 			tableItems.forEach((part) => {
 				owned += part.owned;
